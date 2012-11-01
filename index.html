@@ -19,12 +19,12 @@
       <div class="masthead">
         <h2 class="muted">Rensselaer's Chapter of UPE</h2>
         <ul class="nav nav-pills">
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="committees.html">Committees</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="tutoring.html">Tutoring</a></li>
+          <li class="active"><a id="nav-home" rel="popover" href="index.html">Home</a></li>
+          <li id="nav-about"><a href="about.html">About</a></li>
+          <li id="nav-committees"><a href="committees.html">Committees</a></li>
+          <li id="nav-events"><a href="events.html">Events</a></li>
+          <li id="nav-projects"><a href="projects.html">Projects</a></li>
+          <li id="nav-tutoring"><a href="tutoring.html">Tutoring</a></li>
         </ul>
       </div>
 
@@ -41,7 +41,7 @@
 
       <div class="row-fluid marketing">
         <div class="span6">
-          <a href="events.html">
+          <a id="test-id" href="events.html">
           <h4>Open Source Festival</h4>
           <p>Check out some details on UPE's Open Source Festival.</p>
           </a>
@@ -73,19 +73,27 @@
     </div>
 
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../assets/js/jquery.js"></script>
-    <script src="../assets/js/bootstrap-transition.js"></script>
-    <script src="../assets/js/bootstrap-alert.js"></script>
-    <script src="../assets/js/bootstrap-modal.js"></script>
-    <script src="../assets/js/bootstrap-dropdown.js"></script>
-    <script src="../assets/js/bootstrap-scrollspy.js"></script>
-    <script src="../assets/js/bootstrap-tab.js"></script>
-    <script src="../assets/js/bootstrap-tooltip.js"></script>
-    <script src="../assets/js/bootstrap-popover.js"></script>
-    <script src="../assets/js/bootstrap-button.js"></script>
-    <script src="../assets/js/bootstrap-collapse.js"></script>
-    <script src="../assets/js/bootstrap-carousel.js"></script>
-    <script src="../assets/js/bootstrap-typeahead.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.js"></script>
+    <script type="text/javascript" src="javascripts/bootstrap.js"></script>
+    <script type="text/javascript" src="javascripts/localstore.js"></script>
+    <script type="text/javascript" src="javascripts/tooltip.js"></script>
+
+    <script type="text/javascript">
+      $(function (){
+        //Tooltips are only enabled on browsers with localStorage
+        if( localstore.isEnabled()){
+          store = localstore.store;
+          //Show the tip if we have not seen it before
+          if( !store.tutorTip ){
+            tooltip.show($('#nav-tutoring'), 'Get Help in Class', "You can get help in any of your CS courses by signing up to be tutored by a member of UPE!");
+            store.tutorTip = true;
+          }
+        }
+        else{
+          console.log('localstore is not enabled');
+        }
+      });
+    </script>
 
   </body>
 </html>

@@ -1,3 +1,9 @@
+/* Make the scrollbar always visible so the page doesnt jump */
+html {
+    overflow: -moz-scrollbars-vertical; 
+    overflow-y: scroll;
+}
+
 body {
     padding-top: 20px;
     padding-bottom: 40px;

@@ -75,23 +75,11 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script type="text/javascript" src="javascripts/jquery.js"></script>
     <script type="text/javascript" src="javascripts/bootstrap.js"></script>
-    <script type="text/javascript" src="javascripts/localstore.js"></script>
     <script type="text/javascript" src="javascripts/tooltip.js"></script>
 
     <script type="text/javascript">
       $(function (){
-        //Tooltips are only enabled on browsers with localStorage
-        if( localstore.isEnabled()){
-          store = localstore.store;
-          //Show the tip if we have not seen it before
-          if( !store.tutorTip ){
-            tooltip.show($('#nav-tutoring'), 'Get Help in Class', "You can get help in any of your CS courses by signing up to be tutored by a member of UPE!");
-            store.tutorTip = true;
-          }
-        }
-        else{
-          console.log('localstore is not enabled');
-        }
+        tooltip.showOnce($('#nav-tutoring'), 'Get Help in Class', "You can get help in any of your CS courses by signing up to be tutored by a member of UPE!");
       });
     </script>
 

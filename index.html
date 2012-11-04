@@ -63,7 +63,7 @@
           <p>Test your programming skills at UPE's Programming Competittion, maybe you'll win an iPad or a PS3!</p>
           </a>
 
-          <a href="http://upe.cs.rpi.edu/application.pdf">
+          <a id="news-application" href="http://upe.cs.rpi.edu/application.pdf">
           <h4>Membership Applications</h4>
           <p>Get more information about the benifits of becomming a member of UPE.</p>
           </a>
@@ -79,7 +79,8 @@
 
     <script type="text/javascript">
       $(function (){
-        tooltip.showOnce($('#nav-tutoring'), 'Get Help in Class', "You can get help in any of your CS courses by signing up to be tutored by a member of UPE!");
+        tooltip.showRepeat($('#nav-tutoring'), 'Get Help in Class', "You can get help in any of your CS courses by signing up to be tutored by a member of UPE!") ||
+        tooltip.showRepeat($('#news-application'), 'Join UPE', "Make sure you submint your application to join UPE before it's too late!", null, 'top');
       });
     </script>
 

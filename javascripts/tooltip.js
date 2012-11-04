@@ -1,4 +1,5 @@
 var tooltip = {
+    //This function is used to show a tooltip EVERY time the page is loaded
     show: function( a_element, a_title, a_content, a_placement ){
         a_placement = a_placement || 'bottom';
         a_element.popover({title: a_title, content: a_content, placement: a_placement});
@@ -8,6 +9,8 @@ var tooltip = {
         });
     },
 
+    //This function is used to show a tooltip the FIRST time a user visits a page
+    //  it will NOT show to tooltip if the user does not have localStorage enabled
     showOnce: function( a_element, a_title, a_content, a_placement ){
         //Only do this if localStorage is enabled
         if( localStorage ){
@@ -21,6 +24,8 @@ var tooltip = {
         return false;
     },
 
+    //This function is used to show a tooltip every <a_milis> miliseconds a user visits a page
+    //  it will NOT show to tooltip if the user does not have localStorage enabled
     showRepeat: function( a_element, a_title, a_content, a_milis, a_placement ){
         //Only do this if localStorage is enabled
         if( localStorage ){

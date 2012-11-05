@@ -47,3 +47,8 @@ hr {
 .marketing p + h4 {
     margin-top: 0px;
 }
+
+/* Argh, please don't have linebreaks in links in main p */
+p.lead a {
+    white-space: nowrap;
+}

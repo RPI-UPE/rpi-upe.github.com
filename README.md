@@ -1,7 +1,7 @@
 RPI UPE Website
 ===============
 
-DO NOT PUSH TO THIS BRANCH!
+DO NOT PUSH TO THE MASTER BRANCH!
 
 Workflow is as follows:
     1) Create a new branch for your feature, branch off of dev

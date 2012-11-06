@@ -33,7 +33,7 @@
       <div class="jumbotron">
         <h1>Upsilon Pi Epsilon</h1>
         <p class="lead readable">Welcome to the <a href="http://www.rpi.edu/">Rensselaer Polytechnic Institute</a> chapter of <a href="http://upe.acm.org/">Upsilon Pi Epsilon</a>, the only international honors society for the computing and information disciplines. Our membership consists of outstanding undergraduate and graduate students in the fields of Computer Science, Information Technology, and Computer Engineering. Members are chosen not only for their scholastic achievement in a computing field, but also for distinguishing themselves as true professionals by meeting the standards of the society. Members also provide a number of services to the Rensselaer community through tutoring services and remediation sessions.</p>
-        <p><a class="btn btn-large btn-success" href="http://upe.cs.rpi.edu/application.pdf">Sign up today</a></p>
+        <p><a id="btnJoin" class="btn btn-large btn-success" href="http://upe.cs.rpi.edu/application.pdf">Sign up today</a></p>
         <p class="lead">Follow us on <a href="https://github.com/RPI-UPE">GitHub</a> too!</a>
       </div>
 
@@ -80,7 +80,7 @@
     <script type="text/javascript">
       $(function (){
         tooltip.showRepeat($('#nav-tutoring'), 'Get Help in Class', "You can get help in any of your CS courses by signing up to be tutored by a member of UPE!") ||
-        tooltip.showRepeat($('#news-application'), 'Join UPE', "Make sure you submint your application to join UPE before it's too late!", null, 'top');
+        tooltip.showRepeat($('#btnJoin'), 'Join UPE', "Make sure you submint your application to join UPE before it's too late!", null, 'right');
       });
     </script>
 

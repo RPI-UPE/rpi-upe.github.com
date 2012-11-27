@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Rpi-upe.github.com by RPI-UPE</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/image_popover.css">
+    <link rel="stylesheet" href="stylesheets/bootstrap.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About UPE at RPI">
+    <meta name="author" content="Jerry Schneider">
+
+  </head>
+  <body>
+    <div class="container-narrow">
+
+      <div class="masthead">
+        <h2 class="muted">Rensselaer's Chapter of UPE</h2>
+        <ul class="nav nav-pills">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="committees.html">Committees</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="tutoring.html">Tutoring</a></li>
+          <li class="active"><a href="photos.html">Photos</a></li>
+        </ul>
+      </div>
+
+      <hr>
+
+      <div class="row-fluid marketing">
+        <div class="span12">
+          <h2>Photos</h2>
+
+          <ul class="thumbnails">
+            <li class="span4">
+              <a href="#" onclick="expand_thumb(this.getElementsByTagName('img')[0])" class="thumbnail">
+                <img src="images/ossfest-fall-2012-1.jpg" alt="Josh talking about OSS Fest">
+              </a>
+            </li>
+
+            <li class="span4">
+              <a href="#" onclick="expand_thumb(this.getElementsByTagName('img')[0])" class="thumbnail">
+                <img src="images/ossfest-fall-2012-2.jpg" alt="OSS Fest">
+              </a>
+            </li>
+
+            <li class="span4">
+              <a href="#" onclick="expand_thumb(this.getElementsByTagName('img')[0])" class="thumbnail">
+                <img src="images/ossfest-fall-2012-3.jpg" alt="OSS Fest">
+              </a>
+            </li>
+
+            <li class="span4" onclick="expand_thumb(this.getElementsByTagName('img')[0])" style="margin-left: 0">
+              <a href="#" class="thumbnail">
+                <img src="images/ossfest-fall-2012-4.jpg" alt="OSS Fest">
+              </a>
+            </li>
+
+            <li class="span4">
+              <a href="#" onclick="expand_thumb(this.getElementsByTagName('img')[0])" class="thumbnail">
+                <img src="images/prog-comp-fall-2012-1.jpg" alt="Programming Competition">
+              </a>
+            </li>
+
+            <li class="span4">
+              <a href="#" onclick="expand_thumb(this.getElementsByTagName('img')[0])" class="thumbnail">
+                <img src="images/prog-comp-fall-2012-2.jpg" alt="Programming Competition">
+              </a>
+            </li>
+
+            <li class="span4" style="margin-left: 0">
+              <a href="#" onclick="expand_thumb(this.getElementsByTagName('img')[0])" class="thumbnail">
+                <img src="images/prog-comp-fall-2012-3.jpg" alt="Programming Competition">
+              </a>
+            </li>
+
+            <li class="span4">
+              <a href="#" onclick="expand_thumb(this.getElementsByTagName('img')[0])" class="thumbnail">
+                <img src="images/semi-annual-dinner-fall-2012-1.jpg" alt="Semi Annual Dinner">
+              </a>
+            </li>
+
+            <li class="span4">
+              <a href="#" onclick="expand_thumb(this.getElementsByTagName('img')[0])" class="thumbnail">
+                <img src="images/semi-annual-dinner-fall-2012-2.jpg" alt="Semi Annual Dinner">
+              </a>
+            </li>
+
+            <li class="span4" style="margin-left: 0">
+              <a href="#" onclick="expand_thumb(this.getElementsByTagName('img')[0])" class="thumbnail">
+                <img src="images/semi-annual-dinner-fall-2012-3.jpg" alt="Semi Annual Dinner">
+              </a>
+            </li>
+
+            <li class="span4">
+              <a href="#" onclick="expand_thumb(this.getElementsByTagName('img')[0])" class="thumbnail">
+                <img src="images/semi-annual-dinner-fall-2012-4.jpg" alt="Semi Annual Dinner">
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+    </div>
+
+    <script type="text/javascript" src="javascripts/jquery.js"></script>
+    <script type="text/javascript" src="javascripts/image-popover.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        window.expand_thumb = function( element ){
+          image_popover.popover( element );
+        };
+      });
+    </script>
+
+  </body>
+</html>

@@ -9,16 +9,20 @@ var image_popover = {
         if( !document.getElementById( 'image-popover' ) ){
             this.create( image );
         }
+        return false;
     },
 
     create: function( source ){
         var overlay = document.createElement('div');
         overlay.setAttribute('id', 'image-popover');
         overlay.setAttribute('onClick', 'image_popover.destory()');
+        overlay.style.height = this.getDocHeight() + 'px';
 
         var img_frame = document.createElement('div');
         img_frame.setAttribute('id', 'image-frame');
         img_frame.setAttribute('class', 'well');
+        var doc = document.documentElement, body = document.body;
+        img_frame.style.marginTop = ((doc && doc.scrollTop  || body && body.scrollTop  || 0) + 100) + 'px';
         overlay.appendChild( img_frame );
 
         var img = document.createElement('img');
@@ -31,5 +35,14 @@ var image_popover = {
 
     destory: function(){
         document.body.removeChild( document.getElementById('image-popover') );
+    },
+
+    getDocHeight: function() {
+        var D = document;
+        return Math.max(
+            Math.max(D.body.scrollHeight, D.documentElement.scrollHeight),
+            Math.max(D.body.offsetHeight, D.documentElement.offsetHeight),
+            Math.max(D.body.clientHeight, D.documentElement.clientHeight)
+        );
     }
 };

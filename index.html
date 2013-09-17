@@ -19,14 +19,14 @@
       <div class="masthead">
         <h2 class="muted">Rensselaer's Chapter of UPE</h2>
         <ul class="nav nav-pills">
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="committees.html">Committees</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="minutes.html">Minutes</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="tutoring.html">Tutoring</a></li>
-          <li><a href="photos.html">Photos</a></li>
+          <li id="nav-home" class="active"><a href="index.html">Home</a></li>
+          <li id="nav-about"><a href="about.html">About</a></li>
+          <li id="nav-committees"><a href="committees.html">Committees</a></li>
+          <li id="nav-events"><a href="events.html">Events</a></li>
+          <li id="nav-minutes"><a href="minutes.html">Minutes</a></li>
+          <li id="nav-projects"><a href="projects.html">Projects</a></li>
+          <li id="nav-tutoring"><a href="tutoring.html">Tutoring</a></li>
+          <li id="nav-photos"><a href="photos.html">Photos</a></li>
         </ul>
       </div>
 
@@ -43,7 +43,7 @@
 
       <div class="row-fluid marketing">
         <div class="span6">
-          <a href="io">
+          <a href="io" id="item-io">
           <h4>UPE IO</h4>
           <p>View details for the upcoming UPE IO tech talk.</p>
           </a>
@@ -86,6 +86,7 @@
 
     <script type="text/javascript">
       $(function (){
+        tooltip.showRepeat($('#item-io'), 'UPE I/O', "Join us for UPE I/O, an event where you can get hands on experience with topics in CS!", null, 'top') ||
         tooltip.showRepeat($('#nav-tutoring'), 'Get Help in Class', "You can get help in any of your CS courses by signing up to be tutored by a member of UPE!") ||
         tooltip.showRepeat($('#btnJoin'), 'Join UPE', "Make sure you submint your application to join UPE before it's too late!", null, 'right');
       });

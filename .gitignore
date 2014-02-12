@@ -1,1 +1,6 @@
 *.swp
+
+## TeX Files
+*.aux
+*.log
+*.synctex.gz

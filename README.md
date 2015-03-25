@@ -9,7 +9,8 @@
 ## Things to update each semester
 
 - The application
-  - The source tex file must be updated with the new deadline and semester (`apps/source/UPE_application.tex`)
+  - See instructions here: https://github.com/RPI-UPE/application 
+  - The source tex file must be updated with the new deadline and semester
   - The application pdf must be generated and sym-linked to `application.pdf`
 - `committees.html`
   - Officer names

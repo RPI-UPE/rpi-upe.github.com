@@ -1,0 +1,38 @@
+---
+const items = {
+  "/": "Home",
+  "/about": "About",
+  "/committees": "Committees",
+  "/events": "Events",
+  "/portfolios": "Portfolios",
+  "/projects": "Projects",
+  "/tutoring": "Tutoring",
+  "/photos": "Photos",
+};
+---
+
+<nav class="flex gap-2 justify-center">
+  {
+    Object.entries(items).map(([href, name]) => {
+      // or is needed because in prod astro usually puts a trailing /
+      const active =
+        Astro.url.pathname == href || Astro.url.pathname == href + "/";
+
+      return (
+        <a
+          href={href}
+          class="text-blue-600 hover:brightness-125 py-1 px-2 font-semibold"
+          class:list={
+            active
+              ? "bg-blue-600 text-white rounded-lg hover:brightness-100".split(
+                  " "
+                )
+              : []
+          }
+        >
+          {name}
+        </a>
+      );
+    })
+  }
+</nav>

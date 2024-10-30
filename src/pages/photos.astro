@@ -1,0 +1,42 @@
+---
+import Main from "@/layouts/main.astro";
+
+const images = (await Promise.all(
+  Object.entries(import.meta.glob("@/assets/img/*")).map(([x, y]) => {
+    return new Promise((r) => {
+      y().then((y) => {
+        r([x, y]);
+      });
+    });
+  })
+)) as [string, [string, { default: { height: number; width: number } }]];
+---
+
+<Main useProse title="Photos">
+  <h2>Photos</h2>
+  <div class="grid grid-cols-2 grid-flow-row-dense gap-4">
+    {
+      Object.entries(images).map(([, [xx, zz]]) => {
+        const x = xx as string;
+        const z = zz as { default: { width: number; height: number } };
+
+        // this is so css does our job and rearranges the images so they all show up nicely
+        let rowspan = 1 + Math.floor((z.default.height / z.default.width) * 5);
+
+        return (
+          <>
+            <img
+              src={x}
+              alt=""
+              class={`!m-0 rounded-lg border-gray-500 border-2 p-2 hover:border-blue-500 hover:shadow-md transition-all duration-300 w-full object-cover row-span-${rowspan}`}
+            />
+          </>
+        );
+      })
+    }
+  </div>
+  <div
+    class="row-span-1 row-span-2 row-span-3 row-span-4 row-span-5 row-span-6 row-span-7 row-span-8 row-span-9 row-span-10 row-span-11 row-span-12"
+  >
+  </div>
+</Main>

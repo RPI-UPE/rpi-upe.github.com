@@ -1,0 +1,42 @@
+---
+import Navbar from "@/components/navbar.astro";
+import { ViewTransitions } from "astro:transitions";
+
+interface Properties {
+  title?: string;
+}
+
+interface Props extends Properties {
+  frontmatter?: Properties;
+  useProse?: boolean;
+}
+
+const { title, frontmatter, useProse } = Astro.props;
+---
+
+<html lang="en" class="w-full h-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      UPE {title || frontmatter?.title ? " - " : ""}
+      {title ?? frontmatter?.title ?? ""}
+    </title>
+    <ViewTransitions />
+  </head>
+
+  <body class="w-full h-full flex flex-col p-5" transition:animate={"fade"}>
+    <header class="self-center text-3xl">Rensselaer's Chapter of ΥΠΕ</header>
+    <Navbar />
+    <main
+      class="self-center w-full border-t-black border-t-2 border-opacity-30 mt-5 pt-5 pb-24"
+      class:list={useProse || frontmatter !== undefined
+        ? "prose lg:prose-xl prose-a:text-blue-600 prose-a:no-underline ".split(
+            " "
+          )
+        : []}
+    >
+      <slot />
+    </main>
+  </body>
+</html>
